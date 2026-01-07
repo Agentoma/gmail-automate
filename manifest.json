@@ -1,0 +1,86 @@
+{
+  "manifest_version": 3,
+  "name": "Gmail AutoMate - Local AI Assistant",
+  "version": "1.0.0",
+  "description": "HARPA-style Gmail automation. Local AI-powered email labeling, prioritization & auto-triage. Zero API costs, full privacy.",
+  
+  "permissions": [
+    "storage",
+    "alarms",
+    "notifications"
+  ],
+  
+  "host_permissions": [
+    "*://mail.google.com/*"
+  ],
+  
+  "background": {
+    "service_worker": "background/service-worker.js",
+    "type": "module"
+{
+  "manifest_version": 3,
+  "name": "Gmail Auto-Labeler",
+  "version": "1.0.0",
+  "description": "Automatically label Gmail emails based on content analysis using local AI",
+  
+  "permissions": [
+    "storage",
+    "alarms",
+    "tabs"
+  ],
+  
+  "host_permissions": [
+    "https://mail.google.com/*"
+  ],
+  
+  "background": {
+    "service_worker": "background/service-worker.js",
+    "type": "module"
+  },
+  
+  "content_scripts": [
+    {
+      "matches": ["*://mail.google.com/**"],
+      "js": ["content/gmail-injector.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}  
+  "content_scripts": [
+    {
+      "matches": ["*://mail.google.com/*"],
+      "js": ["content/gmail-injector.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
